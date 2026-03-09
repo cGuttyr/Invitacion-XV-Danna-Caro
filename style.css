@@ -1,0 +1,668 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:black;
+font-family:sans-serif;
+max-width:480px;
+margin:auto;
+overflow-x:hidden;
+}
+
+#portada{
+position:relative;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100vh;
+text-align:center;
+}
+
+section{
+width:100%;
+position:relative;
+overflow:hidden;
+}
+
+/* FOTO FONDO PORTADA */
+
+.foto{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:1;
+}
+
+/* COLUMNAS ENCIMA DE LA FOTO */
+
+.bloques{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+z-index:2;
+}
+
+.bloque{
+width:50%;
+background:rgba(255,195,146,0.6);
+}
+
+/* sombra columna derecha */
+
+.derecha{
+box-shadow:-6px 0px 10px rgba(0,0,0,0.35);
+}
+
+/* SELLO */
+
+.sello{
+position:absolute;
+top:52%;
+left:50%;
+transform:translate(-50%,-50%);
+width:120px;
+z-index:3;
+
+opacity:0;
+animation:fadeSello 1.5s ease forwards;
+}
+
+@keyframes fadeSello{
+
+0%{
+opacity:0;
+transform:translate(-50%,-60%);
+}
+
+100%{
+opacity:1;
+transform:translate(-50%,-50%);
+}
+
+}
+
+/* TEXTO TOCA AQUI */
+
+.toca{
+font-family:"Monsieur La Doulaise", cursive;
+position:absolute;
+top:59%;
+left:50%;
+transform:translateX(-50%);
+font-size:24px;
+letter-spacing:1px;
+color:white;
+z-index:4;
+}
+
+/* PAGINA 2 */
+
+#pagina2{
+display:none;
+background:white;
+}
+
+.seccion-inicial{
+position:relative;
+width:100%;
+}
+
+/* IMAGEN PRINCIPAL */
+
+.bloque-imagen{
+position:relative;
+width:100%;
+max-width:1080px;
+margin:auto;
+}
+
+.bloque-imagen img{
+width:100%;
+display:block;
+}
+
+/* DEGRADADO */
+
+.degradado{
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:200px;
+
+background:linear-gradient(
+to top,
+rgb(255,255,255) 0%,
+rgba(255,255,255,0) 100%
+);
+
+pointer-events:none;
+}
+
+/* BLOQUE XV */
+
+.contenido-xv{
+
+position:absolute;
+
+bottom:-280px;
+left:50%;
+
+transform:translateX(-50%);
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+gap:15px;
+
+text-align:center;
+
+z-index:5;
+}
+
+/* TITULO XV */
+
+.titulo-svg{
+width:260px;
+max-width:85%;
+
+opacity:0;
+transform:translateY(20px);
+animation:fadeTitulo 1.5s ease forwards;
+animation-delay:0.3s;
+}
+
+/* FECHA */
+
+.texto1-svg{
+width:80px;
+max-width:50%;
+margin-top:15px;
+
+opacity:0;
+transform:translateY(20px);
+animation:fadeTitulo 1.5s ease forwards;
+animation-delay:0.6s;
+}
+
+/* LINEA */
+
+.separador{
+width:280px;
+max-width:70%;
+height:1px;
+margin-top:20px;
+background:#28282877;
+}
+
+/* ANIMACION TITULOS */
+
+@keyframes fadeTitulo{
+
+0%{
+opacity:0;
+transform:translateY(20px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* GALERIA */
+
+.seccion-galeria{
+background:white;
+padding:10px 20px;
+margin-top:300px;
+}
+
+.galeria{
+max-width:1080px;
+margin:auto;
+
+display:flex;
+gap:10px;
+}
+
+.foto-galeria{
+flex:1;
+}
+
+.foto-galeria img{
+width:100%;
+display:block;
+
+opacity:0;
+transform:scale(0.9);
+animation:fadeFoto 1.2s ease forwards;
+}
+
+@keyframes fadeFoto{
+
+0%{
+opacity:0;
+transform:scale(0.9);
+}
+
+100%{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+.foto-galeria:nth-child(1) img{
+animation-delay:0.8s;
+}
+
+.foto-galeria:nth-child(2) img{
+animation-delay:1s;
+}
+
+.separador2{
+width:200px;
+height:1px;
+
+background:#28282877;
+
+margin:35px auto 0px auto;
+
+opacity:0.8;
+}
+
+/* ANIMACIONES SCROLL */
+
+.animar{
+opacity:0;
+transform:translateY(30px);
+transition:all 1s ease;
+}
+
+.animar.visible{
+opacity:1;
+transform:translateY(0);
+}
+
+/* PADRES */
+
+.seccion-padres{
+background:white;
+padding:10px 20px;
+text-align:center;
+}
+
+.titulopadres-svg{
+width:230px;
+height:auto;
+display:block;
+margin:0 auto 20px auto;
+}
+
+.texto2-svg{
+width:400px;
+max-width:100%;
+margin:10px auto 50px;
+display:block;
+}
+
+/* GALERIA PADRES */
+
+.galeria-padres{
+max-width:1080px;
+margin:auto;
+
+display:flex;
+gap:0px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.foto-padre{
+flex:1;
+max-width:420px;
+}
+
+.foto-padre img{
+width:100%;
+display:block;
+}
+
+.foto-padre:nth-child(2){
+margin-top:160px;
+margin-left:-150px;
+}
+
+.separador3{
+width:220px;
+height:1px;
+
+background:#28282877;
+
+margin:60px auto 0 auto;
+opacity:0.8;
+}
+
+/* EVENTO */
+
+.seccion-evento{
+text-align:center;
+padding:60px 20px;
+}
+
+.botones-evento{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.boton-evento{
+width:100px;
+height:140px;
+
+background:#f5c69b;
+
+border-radius:20px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+text-decoration:none;
+color:white;
+}
+
+.boton-evento img{
+width:40px;
+margin-bottom:10px;
+}
+
+.boton-evento span{
+font-size:14px;
+text-align:center;
+}
+
+/* TEXTOS EVENTO */
+
+.texto3-svg{
+width:150px;
+max-width:90%;
+display:block;
+margin:-22px auto 30px auto;
+}
+
+.titulo3-svg{
+width:250px;
+max-width:90%;
+display:block;
+margin:40px auto 10px auto;
+}
+
+.texto4-svg{
+width:100px;
+max-width:80%;
+display:block;
+margin:0 auto 40px auto;
+}
+
+.texto5-svg{
+width:420px;
+max-width:90%;
+display:block;
+margin:20px auto 40px auto;
+}
+
+.separador4{
+width:220px;
+height:1px;
+background:#28282877;
+margin:40px auto 100px auto;
+}
+
+/* SLIDER */
+
+.galeria-slider{
+position:relative;
+max-width:900px;
+margin:-30px auto -10px auto;
+overflow:hidden;
+}
+
+.slider-track{
+display:flex;
+transition:transform 0.5s ease;
+width:100%;
+}
+
+.slide{
+min-width:100%;
+object-fit:cover;
+}
+
+/* BOTONES SLIDER */
+
+.slider-btn{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+
+width:50px;
+height:80px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:rgba(0,0,0,0.25);
+
+border:none;
+color:white;
+font-size:28px;
+
+cursor:pointer;
+z-index:10;
+}
+
+.prev{
+left:0;
+border-radius:0 10px 10px 0;
+}
+
+.next{
+right:0;
+border-radius:10px 0 0 10px;
+}
+
+/* INDICADORES */
+
+.slider-indicadores{
+
+position:absolute;
+bottom:18px;
+left:50%;
+transform:translateX(-50%);
+
+display:flex;
+gap:8px;
+
+background:rgba(0,0,0,0.25);
+padding:6px 14px;
+border-radius:20px;
+
+}
+
+.indicador{
+
+width:8px;
+height:8px;
+border-radius:50%;
+
+background:rgba(255,255,255,0.4);
+
+}
+
+.indicador.activo{
+
+width:18px;
+border-radius:10px;
+background:white;
+
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.9);
+
+display:none;
+align-items:center;
+justify-content:center;
+
+z-index:999;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+.cerrar{
+position:absolute;
+top:30px;
+right:30px;
+
+font-size:40px;
+color:white;
+cursor:pointer;
+}
+
+/* ------------------- */
+/* DRESS CODE */
+/* ------------------- */
+
+.dresscode-portada{
+position:relative;
+width:100%;
+}
+
+.dresscode-portada img{
+width:100%;
+display:block;
+}
+
+.seccion-dresscode{
+background:white;
+padding:60px 20px;
+text-align:center;
+}
+
+/* TEXTOS */
+
+.textoxv{
+width:340px;
+max-width:90%;
+display:block;
+margin:30px auto 10px auto;
+}
+
+.textovestimenta{
+width:250px;
+max-width:80%;
+padding:30px 10px;
+display:block;
+margin:0 auto 50px auto;
+}
+
+/* GRID */
+
+.grid-dress{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+max-width:400px;
+margin:auto;
+margin-top:-40px;
+}
+
+/* ICONOS */
+
+.icono-dress{
+width:80px;
+margin-bottom:30px;
+}
+
+/* TEXTOS ELLOS / ELLAS */
+
+.textoellos,
+.textoellas{
+width:60px;
+display:block;
+margin:auto;
+}
+
+/* DIVISOR */
+
+.divisor{
+width:2px;
+height:190px;
+background:#ddd;
+}
+
+/* TEXTO FINAL */
+
+.textodorado{
+width:150px;
+max-width:90%;
+display:block;
+margin:40px auto 0 auto;
+}
+
+/* BOTON VOLVER */
+
+.btn-volver{
+position:fixed;
+
+bottom:25px;
+right:20px;
+
+background:#f5c69b;
+
+padding:12px 20px;
+
+border-radius:30px;
+
+color:white;
+
+text-decoration:none;
+
+font-size:12px;
+
+z-index:9999;
+
+box-shadow:0 6px 20px rgba(0,0,0,0.2);
+
+}
