@@ -2,8 +2,6 @@ const portada = document.getElementById("portada");
 const pagina2 = document.getElementById("pagina2");
 const musica = document.getElementById("musica");
 
-/* CLICK PORTADA */
-
 portada.addEventListener("click", () => {
 
 pagina2.style.display = "block";
@@ -12,9 +10,7 @@ pagina2.scrollIntoView({
 behavior:"smooth"
 });
 
-/* iniciar musica */
-
-if(musica && musica.paused){
+if(musica){
 musica.play().catch(()=>{});
 }
 
